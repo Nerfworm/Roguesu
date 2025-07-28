@@ -51,6 +51,8 @@ All commit messages should follow the [Conventional Commits](https://www.convent
 README.md
 .github/
   copilot-instructions.md
+.gitignore
+.env                # Store secrets here, do NOT commit
 src/
   components/      # Reusable React components
   pages/           # Page-level React components (routes)
