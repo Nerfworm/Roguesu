@@ -46,27 +46,35 @@ All commit messages should follow the [Conventional Commits](https://www.convent
 - Avoid complex backend logic.
 - No authentication beyond osu! API requirements.
 
-## Example File Structure
+## Current File Structure
 ```
 README.md
 .github/
   copilot-instructions.md
 .gitignore
 .env                # Store secrets here, do NOT commit
+index.html          # Vite entry point
+package.json        # Dependencies and scripts
+package-lock.json   # Dependency lock file
+tailwind.config.js  # Tailwind CSS configuration
+tsconfig.json       # TypeScript configuration
+vite.config.ts      # Vite configuration with osu! API proxy
+node_modules/       # Dependencies (auto-generated)
 src/
-  components/      # Reusable React components
-  pages/           # Page-level React components (routes)
-  utils/           # Utility/helper functions
-  hooks/           # Custom React hooks
-  state/           # State management (e.g., Zustand stores)
-  api/             # API functions (osu! and future backend)
-  assets/          # Images, icons, etc.
-  App.tsx
-  main.tsx
-  index.css
-public/
-  # Static files (favicon, manifest, etc.)
-backend/           # (Add later) Backend code, e.g., Express server
+  components/       # Reusable React components
+  pages/            # Page-level React components (routes)
+    HomePage.tsx    # Main entry page with username input
+  utils/            # Utility/helper functions
+  hooks/            # Custom React hooks
+  state/            # State management (e.g., Zustand stores)
+  api/              # API functions (osu! and future backend)
+    osuApi.ts       # osu! API integration with OAuth2
+  assets/           # Images, icons, etc.
+  App.tsx           # Main App component
+  main.tsx          # React entry point
+  index.css         # Global styles with Tailwind directives
+  vite-env.d.ts     # TypeScript environment variable types
+backend/            # (Add later) Backend code, e.g., Express server
   controllers/
   models/
   routes/
@@ -76,5 +84,3 @@ backend/           # (Add later) Backend code, e.g., Express server
 
 ## References
 - [osu! API docs](https://osu.ppy.sh/docs/index.html)
-- [Copilot custom instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)
-- [Copilot customization](https://code.visualstudio.com/docs/copilot/copilot-customization)

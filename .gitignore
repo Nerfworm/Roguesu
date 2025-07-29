@@ -1,4 +1,3 @@
-# Minimal .gitignore for Roguesu
 node_modules/
 dist/
 .env
